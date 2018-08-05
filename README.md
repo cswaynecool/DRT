@@ -17,10 +17,16 @@ The tracking results may be a little different on different machines. The sugges
 
 If you find our paper useful, please consider citing it.
 @inproceedings{sun2018correlation,
+
 title={Correlation Tracking via Joint Discrimination and Reliability Learning},
+
 author={Sun, Chong and Wang, Dong and Lu, Huchuan and Yang, Ming-Hsuan},
+
 booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+
 pages={489--497},
+
 year={2018}
+
 }
 
