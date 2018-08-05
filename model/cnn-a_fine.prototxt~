@@ -1,0 +1,640 @@
+name: "lnet"
+force_backward: true
+input: "data"
+input_dim: 1
+input_dim: 512
+input_dim: 46 
+input_dim: 46 
+
+
+
+layer { 
+  bottom: "data"
+  top: "drop_data"
+  name: "drop_data"
+  type: "Dropout"
+  dropout_param {
+    dropout_ratio: 0.
+  }
+}
+
+layer {
+  bottom: "drop_data"
+  top: "conv5_f1"
+  name: "conv5_f1"
+  type: "Wtfsixth"
+  #type: "Convolution"
+  param {
+    lr_mult: 0.1
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 100
+    pad: 2
+   # mask: true
+    mylayersixth: true
+    #mylayerone: true
+    kernel_size: 5
+    weight_filler {
+      type: "gaussian"
+      std: 1e-7 #1e-7
+    }
+    bias_filler {
+      type: "constant"
+      value: 0.1
+    }
+  }
+}
+
+layer {
+  bottom: "conv5_f1"
+  top: "conv5_f2"
+  name: "conv5_f2"
+  type: "Wtffifth"
+ #type: "Convolution"
+  param {
+    #lr_mult: 1000000
+    lr_mult: 2000000
+    #lr_mult: 0
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    mylayerfifth: true
+    num_output: 100
+    group: 1
+    pad: 1
+    kernel_size: 3
+    weight_filler {
+      type: "gaussian"
+      std: 1e-7
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+layer {
+  name: "slicer_label"
+  type: "Slice"
+  bottom: "conv5_f2"
+  top: "label1"
+  top: "label2"
+  top: "label3"
+  top: "label4"
+  top: "label5"
+  top: "label6"
+  top: "label7"
+  top: "label8"
+  top: "label9"
+  top: "label10"
+  top: "label11"
+  top: "label12"
+  top: "label13"
+  top: "label14"
+  top: "label15"
+  top: "label16"
+  top: "label17"
+  top: "label18"
+  top: "label19"
+  top: "label20"
+  top: "label21"
+  top: "label22"
+  top: "label23"
+  top: "label24"
+  top: "label25"
+  top: "label26"
+  top: "label27"
+  top: "label28"
+  top: "label29"
+  top: "label30"
+  top: "label31"
+  top: "label32"
+  top: "label33"
+  top: "label34"
+  top: "label35"
+  top: "label36"
+  top: "label37"
+  top: "label38"
+  top: "label39"
+  top: "label40"
+  top: "label41"
+  top: "label42"
+  top: "label43"
+  top: "label44"
+  top: "label45"
+  top: "label46"
+  top: "label47"
+  top: "label48"
+  top: "label49"
+  top: "label50"
+  top: "label51"
+  top: "label52"
+  top: "label53"
+  top: "label54"
+  top: "label55"
+  top: "label56"
+  top: "label57"
+  top: "label58"
+  top: "label59"
+  top: "label60"
+  top: "label61"
+  top: "label62"
+  top: "label63"
+  top: "label64"
+  top: "label65"
+  top: "label66"
+  top: "label67"
+  top: "label68"
+  top: "label69"
+  top: "label70"
+  top: "label71"
+  top: "label72"
+  top: "label73"
+  top: "label74"
+  top: "label75"
+  top: "label76"
+  top: "label77"
+  top: "label78"
+  top: "label79"
+  top: "label80"
+  top: "label81"
+  slice_param {
+    axis: 1
+    slice_point: 1
+    slice_point: 2
+    slice_point: 3
+    slice_point: 4
+    slice_point: 5
+    slice_point: 6
+    slice_point: 7
+    slice_point: 8
+    slice_point: 9
+    slice_point: 10
+    slice_point: 11
+    slice_point: 12
+    slice_point: 13
+    slice_point: 14
+    slice_point: 15
+    slice_point: 16
+    slice_point: 17
+    slice_point: 18
+    slice_point: 19
+    slice_point: 20
+    slice_point: 21
+    slice_point: 22
+    slice_point: 23
+    slice_point: 24
+    slice_point: 25
+    slice_point: 26
+    slice_point: 27
+    slice_point: 28
+    slice_point: 29
+    slice_point: 30
+    slice_point: 31
+    slice_point: 32
+    slice_point: 33
+    slice_point: 34
+    slice_point: 35
+    slice_point: 36
+    slice_point: 37
+    slice_point: 38
+    slice_point: 39
+    slice_point: 40
+    slice_point: 41
+    slice_point: 42
+    slice_point: 43
+    slice_point: 44
+    slice_point: 45
+    slice_point: 46
+    slice_point: 47
+    slice_point: 48
+    slice_point: 49
+    slice_point: 50
+    slice_point: 51
+    slice_point: 52
+    slice_point: 53
+    slice_point: 54
+    slice_point: 55
+    slice_point: 56
+    slice_point: 57
+    slice_point: 58
+    slice_point: 59
+    slice_point: 60
+    slice_point: 61
+    slice_point: 62
+    slice_point: 63
+    slice_point: 64
+    slice_point: 65
+    slice_point: 66
+    slice_point: 67
+    slice_point: 68
+    slice_point: 69
+    slice_point: 70
+    slice_point: 71
+    slice_point: 72
+    slice_point: 73
+    slice_point: 74
+    slice_point: 75
+    slice_point: 76
+    slice_point: 77
+    slice_point: 78
+    slice_point: 79
+    slice_point: 80
+  }
+}
+layer 
+{
+  name: "max_out1"
+  type: "Eltwise"
+  bottom: "label1"
+  bottom: "label2"
+  bottom: "label3"
+  bottom: "label4"
+  bottom: "label5"
+  bottom: "label6"
+  bottom: "label7"
+  bottom: "label8"
+  bottom: "label9"
+  top: "max_out1"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out2"
+  type: "Eltwise"
+  bottom: "label10"
+  bottom: "label11"
+  bottom: "label12"
+  bottom: "label13"
+  bottom: "label14"
+  bottom: "label15"
+  bottom: "label16"
+  bottom: "label17"
+  bottom: "label18"
+  top: "max_out2"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out3"
+  type: "Eltwise"
+  bottom: "label19"
+  bottom: "label20"
+  bottom: "label21"
+  bottom: "label22"
+  bottom: "label23"
+  bottom: "label24"
+  bottom: "label25"
+  bottom: "label26"
+  bottom: "label27"
+  top: "max_out3"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out4"
+  type: "Eltwise"
+  bottom: "label28"
+  bottom: "label29"
+  bottom: "label30"
+  bottom: "label31"
+  bottom: "label32"
+  bottom: "label33"
+  bottom: "label34"
+  bottom: "label35"
+  bottom: "label36"
+  top: "max_out4"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out5"
+  type: "Eltwise"
+  bottom: "label37"
+  bottom: "label38"
+  bottom: "label39"
+  bottom: "label40"
+  bottom: "label41"
+  bottom: "label42"
+  bottom: "label43"
+  bottom: "label44"
+  bottom: "label45"
+  top: "max_out5"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out6"
+  type: "Eltwise"
+  bottom: "label46"
+  bottom: "label47"
+  bottom: "label48"
+  bottom: "label49"
+  bottom: "label50"
+  bottom: "label51"
+  bottom: "label52"
+  bottom: "label53"
+  bottom: "label54"
+  top: "max_out6"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out7"
+  type: "Eltwise"
+  bottom: "label55"
+  bottom: "label56"
+  bottom: "label57"
+  bottom: "label58"
+  bottom: "label59"
+  bottom: "label60"
+  bottom: "label61"
+  bottom: "label62"
+  bottom: "label63"
+  top: "max_out7"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out8"
+  type: "Eltwise"
+  bottom: "label64"
+  bottom: "label65"
+  bottom: "label66"
+  bottom: "label67"
+  bottom: "label68"
+  bottom: "label69"
+  bottom: "label70"
+  bottom: "label71"
+  bottom: "label72"
+  top: "max_out8"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out9"
+  type: "Eltwise"
+  bottom: "label73"
+  bottom: "label74"
+  bottom: "label75"
+  bottom: "label76"
+  bottom: "label77"
+  bottom: "label78"
+  bottom: "label79"
+  bottom: "label80"
+  bottom: "label81"
+  top: "max_out9"
+  eltwise_param {
+    operation:MAX
+  }
+}
+
+
+#################################
+##### 反向maxout
+layer 
+{
+  name: "max_out1_1"
+  type: "Eltwise"
+  bottom: "label1"
+  bottom: "label10"
+  bottom: "label19"
+  bottom: "label28"
+  bottom: "label37"
+  bottom: "label46"
+  bottom: "label55"
+  bottom: "label64"
+  bottom: "label73"
+  top: "max_out1_1"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_2"
+  type: "Eltwise"
+  bottom: "label2"
+  bottom: "label11"
+  bottom: "label20"
+  bottom: "label29"
+  bottom: "label38"
+  bottom: "label47"
+  bottom: "label56"
+  bottom: "label65"
+  bottom: "label74"
+  top: "max_out1_2"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_3"
+  type: "Eltwise"
+  bottom: "label3"
+  bottom: "label12"
+  bottom: "label21"
+  bottom: "label30"
+  bottom: "label39"
+  bottom: "label48"
+  bottom: "label57"
+  bottom: "label66"
+  bottom: "label75"
+  top: "max_out1_3"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_4"
+  type: "Eltwise"
+  bottom: "label4"
+  bottom: "label13"
+  bottom: "label22"
+  bottom: "label31"
+  bottom: "label40"
+  bottom: "label49"
+  bottom: "label58"
+  bottom: "label67"
+  bottom: "label76"
+  top: "max_out1_4"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_5"
+  type: "Eltwise"
+  bottom: "label5"
+  bottom: "label14"
+  bottom: "label23"
+  bottom: "label32"
+  bottom: "label41"
+  bottom: "label50"
+  bottom: "label59"
+  bottom: "label68"
+  bottom: "label77"
+  top: "max_out1_5"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_6"
+  type: "Eltwise"
+  bottom: "label6"
+  bottom: "label15"
+  bottom: "label24"
+  bottom: "label33"
+  bottom: "label42"
+  bottom: "label51"
+  bottom: "label60"
+  bottom: "label69"
+  bottom: "label78"
+  top: "max_out1_6"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_7"
+  type: "Eltwise"
+  bottom: "label7"
+  bottom: "label16"
+  bottom: "label25"
+  bottom: "label34"
+  bottom: "label43"
+  bottom: "label52"
+  bottom: "label61"
+  bottom: "label70"
+  bottom: "label79"
+  top: "max_out1_7"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_8"
+  type: "Eltwise"
+  bottom: "label8"
+  bottom: "label17"
+  bottom: "label26"
+  bottom: "label35"
+  bottom: "label44"
+  bottom: "label53"
+  bottom: "label62"
+  bottom: "label71"
+  bottom: "label80"
+  top: "max_out1_8"
+  eltwise_param {
+    operation:MAX
+  }
+}
+layer 
+{
+  name: "max_out1_9"
+  type: "Eltwise"
+  bottom: "label9"
+  bottom: "label18"
+  bottom: "label27"
+  bottom: "label36"
+  bottom: "label45"
+  bottom: "label54"
+  bottom: "label63"
+  bottom: "label72"
+  bottom: "label81"
+  top: "max_out1_9"
+  eltwise_param {
+    operation:MAX
+  }
+}
+
+layer {
+  name: "concat"
+  bottom: "max_out1"
+  bottom: "max_out2"
+  bottom: "max_out3"
+  bottom: "max_out4"
+  bottom: "max_out5"
+  bottom: "max_out6"
+  bottom: "max_out7"
+  bottom: "max_out8"
+  bottom: "max_out9"
+  bottom: "max_out1_1"
+  bottom: "max_out1_2"
+  bottom: "max_out1_3"
+  bottom: "max_out1_4"
+  bottom: "max_out1_5"
+  bottom: "max_out1_6"
+  bottom: "max_out1_7"
+  bottom: "max_out1_8"
+  bottom: "max_out1_9"
+  top: "concat"
+  type: "Concat"
+  concat_param {
+    concat_dim: 1
+  }
+}
+
+layer {
+  bottom: "concat"
+  top: "response"
+  name: "response"
+  type: "Convolution"
+  param {
+    lr_mult: 300000
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 5
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 1
+    group: 1
+    pad: 0
+    kernel_size: 1
+    weight_filler {
+      type: "gaussian"
+      std: 1e-2
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+

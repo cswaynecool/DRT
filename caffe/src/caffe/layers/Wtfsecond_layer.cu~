@@ -1,0 +1,209 @@
+#include <vector>
+
+#include "caffe/filler.hpp"
+#include "caffe/layer.hpp"
+#include "caffe/util/im2col.hpp"
+#include "caffe/util/math_functions.hpp"
+#include "caffe/vision_layers.hpp"
+
+namespace caffe {
+
+
+template <typename Dtype>   
+__global__ void add_mask_H(const int n, Dtype* H_input, Dtype* patch_mask, Dtype* H_total, int num_per_channel, int num_per_sample) {
+  CUDA_KERNEL_LOOP(index, n) {
+  int current_index=index%num_per_channel;
+  int current_index1=index%num_per_sample;
+  H_total[index]=H_input[current_index1]*patch_mask[current_index];
+
+
+
+  }
+}
+
+void fft2_second(cufftHandle forward_plan, float* d_in, float2* d_freq)
+{
+    cufftExecR2C(forward_plan, d_in, d_freq);
+    
+}
+
+void ifft2_second(cufftHandle inverse_plan, float2* d_freq, float* d_out)
+{
+
+     cufftExecC2R(inverse_plan, d_freq, d_out);
+    
+}
+
+ template <typename Dtype>
+__global__ void copy_freq(const int n, Dtype* real, Dtype* imag, float2* output) {
+  CUDA_KERNEL_LOOP(index, n) {
+  output[index].x=real[index];
+  output[index].y=imag[index];
+  }
+}
+
+ template <typename Dtype>
+__global__ void fftshift_second(const int n, int num_per_channel1, Dtype* L_mask, float2* input, Dtype* output_real, Dtype* output_imag) {
+  CUDA_KERNEL_LOOP(index, n) {
+   int channel_index=index/num_per_channel1;
+   int current_index=index%num_per_channel1;
+
+   if(L_mask[current_index]>-0.5)
+    {
+      int ori_index=L_mask[current_index]+channel_index*num_per_channel1;
+      output_real[index]=input[ori_index].x;
+      output_imag[index]=input[ori_index].y;
+     // output_real[index]=ori_index;
+     // output_imag[index]=ori_index;     
+    }
+    else
+    {
+      int ori_index=-L_mask[current_index]+channel_index*num_per_channel1;
+      output_real[index]=input[ori_index].x;
+      output_imag[index]=-input[ori_index].y;//复数域求共轭操作
+      //output_real[index]=ori_index;
+      //output_imag[index]=-ori_index;//复数域求共轭操作  
+    }
+  }
+}      
+
+__global__ void scale_out_real_second(const int n, float* input, float scale_factor) {
+  CUDA_KERNEL_LOOP(index, n) {
+  input[index]=input[index]/scale_factor;
+  }
+}
+
+
+template <typename Dtype>
+__global__ void my_weight_sample_kernel1(const int n, Dtype* sample_real, Dtype* sample_imag,
+    Dtype* weight_real, Dtype* weight_imag, Dtype* weighted_sample_real,Dtype* weighted_sample_imag, int number_per_sample,int number_per_channel) {
+ CUDA_KERNEL_LOOP(index, n) { 
+    int channel_num=number_per_sample/number_per_channel;
+    int sample_index=index/number_per_channel;
+    int position_index=index%number_per_channel;
+    for(int i=0;i<channel_num;i++)
+    {int hf_base_position=position_index+i*number_per_channel;
+
+     weighted_sample_real[index]= weighted_sample_real[index]+weight_real[hf_base_position]*sample_real[hf_base_position+number_per_sample*sample_index]+weight_imag[hf_base_position]*sample_imag[hf_base_position+number_per_sample*sample_index];
+    weighted_sample_imag[index]= weighted_sample_imag[index]-weight_real[hf_base_position]*sample_imag[hf_base_position+number_per_sample*sample_index]+weight_imag[hf_base_position]*sample_real[hf_base_position+number_per_sample*sample_index];
+    } 
+
+  }
+}
+
+template <typename Dtype>
+__global__ void ifftshift_second(const int n, Dtype* L_mask, Dtype* input_real, Dtype* input_imag, float2* output, int row_num, int col_num,int num_per_channel1) {
+  CUDA_KERNEL_LOOP(index, n) {
+   int channel_index=index/num_per_channel1;
+   int current_index=index%num_per_channel1;
+
+   if(L_mask[current_index]>0) 
+   {int ori_index=L_mask[current_index]-1+channel_index*num_per_channel1;
+    output[index].x=input_real[ori_index];
+    output[index].y=input_imag[ori_index];
+   }
+   else
+   { int ori_index=-L_mask[current_index]-1+channel_index*num_per_channel1;
+     output[index].x=input_real[ori_index];
+     output[index].y=-input_imag[ori_index]; 
+   }
+  }
+}
+
+template <typename Dtype>   
+__global__ void get_freq_second(const int n, float2* freq, Dtype* top_data_real) {
+  CUDA_KERNEL_LOOP(index, n) {
+  top_data_real[index]=freq[index].x; 
+
+  }
+}
+
+
+template <typename Dtype>
+void WtfsecondLayer<Dtype>::Forward_gpu(const vector<Blob<Dtype>*>& bottom,
+      const vector<Blob<Dtype>*>& top) {
+    int frag_num=Layer<Dtype>::patch_mask[0]->channels();
+    int count; int count1;
+    int num_per_channel; int num_per_channel1;
+    int num_per_sample;  Dtype* ifftshift_mask; Dtype* fftshift_mask;  Dtype* sample_real; Dtype* sample_imag;
+    Dtype* weight_real; Dtype* weight_imag; Dtype* weighted_sample_real; Dtype* weighted_sample_imag; int row_num; int col_num; float scale_factor;
+    for(int blob_id=0;blob_id<1; blob_id++)
+    {
+        if(blob_id!=2)
+        {
+           count=Layer<Dtype>::H_total[blob_id]->count();
+           num_per_channel=Layer<Dtype>::H_total[blob_id]->height()*Layer<Dtype>::H_total[blob_id]->width();
+           num_per_channel1=Layer<Dtype>::H_total[blob_id]->height()*(Layer<Dtype>::H_total[blob_id]->width()/2+1);
+           count1=num_per_channel1*Layer<Dtype>::H_total[blob_id]->num();
+           num_per_sample=num_per_channel*Layer<Dtype>::H_total[blob_id]->channels();
+           fftshift_mask=Layer<Dtype>::fftshift_mask[0]->mutable_gpu_data(); 
+           ifftshift_mask=Layer<Dtype>::ifftshift_mask[0]->mutable_gpu_data();
+           Dtype* patch_mask=Layer<Dtype>::patch_mask[0]->mutable_gpu_data();
+           Dtype* H_input=Layer<Dtype>::filter_H[blob_id]->mutable_gpu_data();
+    
+           sample_real=Layer<Dtype>::first_layer_samplef_real[blob_id]->mutable_gpu_data();
+           sample_imag=Layer<Dtype>::first_layer_samplef_imag[blob_id]->mutable_gpu_data(); 
+           
+           col_num=Layer<Dtype>::first_layer_hf_real[blob_id]->height(); row_num=Layer<Dtype>::first_layer_hf_real[blob_id]->height();
+           
+          //  top[0]->Reshape(Layer<Dtype>::filter_H[blob_id]->num(),Layer<Dtype>::filter_H[blob_id]->channels(),Layer<Dtype>::filter_H[blob_id]->height(),Layer<Dtype>::filter_H[blob_id]->width()); 
+          //   caffe_copy(Layer<Dtype>::filter_H[blob_id]->count(),Layer<Dtype>::filter_H[blob_id]->mutable_gpu_data(),top[0]->mutable_gpu_data());
+
+
+           Dtype* H_total=Layer<Dtype>::H_total[blob_id]->mutable_gpu_data();
+           add_mask_H<<<CAFFE_GET_BLOCKS(count), CAFFE_CUDA_NUM_THREADS>>>(count, H_input, patch_mask, (Dtype*)this->d_in_total2, num_per_channel, num_per_sample);
+           fft2_second(this->forward_plan_total[blob_id],this->d_in_total2,this->d_freq_total2);
+          
+            fftshift_second<<<CAFFE_GET_BLOCKS(count1), CAFFE_CUDA_NUM_THREADS>>>(count1,num_per_channel1,fftshift_mask,this->d_freq_total2,Layer<Dtype>::second_layer_hf_real[blob_id]->mutable_gpu_data(), Layer<Dtype>::second_layer_hf_imag[blob_id]->mutable_gpu_data());
+           //  top[0]->Reshape(Layer<Dtype>::second_layer_hf_imag[blob_id]->num(),Layer<Dtype>::second_layer_hf_imag[blob_id]->channels(),Layer<Dtype>::second_layer_hf_imag[blob_id]->height(),Layer<Dtype>::second_layer_hf_imag[blob_id]->width());
+          // caffe_copy(Layer<Dtype>::second_layer_hf_imag[blob_id]->count(),Layer<Dtype>::second_layer_hf_real[blob_id]->mutable_gpu_data(),top[0]->mutable_gpu_data());
+          //接着我们和samplesf做内积
+            
+            for(int frag_id=0; frag_id<1; frag_id++)
+            {   weight_real=Layer<Dtype>::second_layer_hf_real[blob_id]->mutable_gpu_data()+Layer<Dtype>::second_layer_hf_real[blob_id]->offset(frag_id);
+                weight_imag=Layer<Dtype>::second_layer_hf_imag[blob_id]->mutable_gpu_data()+Layer<Dtype>::second_layer_hf_imag[blob_id]->offset(frag_id);
+                num_per_sample=Layer<Dtype>::first_layer_samplef_real[blob_id]->height()*Layer<Dtype>::first_layer_samplef_real[blob_id]->width()*Layer<Dtype>::first_layer_samplef_real[blob_id]->channels();
+             weighted_sample_real=Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->mutable_gpu_data()+Layer<Dtype>::first_layer_weighted_sample_real[blob_id]->count()*frag_id;
+             weighted_sample_imag=Layer<Dtype>::second_layer_weighted_sample_imag[blob_id]->mutable_gpu_data()+Layer<Dtype>::first_layer_weighted_sample_imag[blob_id]->count()*frag_id;
+                count=Layer<Dtype>::first_layer_weighted_sample_real[blob_id]->count();
+                my_weight_sample_kernel1<<<CAFFE_GET_BLOCKS(count), CAFFE_CUDA_NUM_THREADS>>>(count, sample_real, sample_imag, weight_real, weight_imag, weighted_sample_real, weighted_sample_imag, num_per_sample,num_per_channel1); 
+         //     top[0]->Reshape(Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->num(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->channels(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->height(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->width());
+       //    caffe_copy(Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->count(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->mutable_gpu_data(),top[0]->mutable_gpu_data());
+            }
+
+             weighted_sample_real=Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->mutable_gpu_data();
+             weighted_sample_imag=Layer<Dtype>::second_layer_weighted_sample_imag[blob_id]->mutable_gpu_data();
+            //接着对得到的结果进行反变换
+            // caffe_copy(Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->count(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->mutable_gpu_data(),top[0]->mutable_gpu_data());
+            count=Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->count();
+            ifftshift_second<<<CAFFE_GET_BLOCKS(count), CAFFE_CUDA_NUM_THREADS>>>(count, ifftshift_mask, weighted_sample_real, weighted_sample_imag, this->d_freq_response2, row_num, col_num,num_per_channel1); 
+            top[0]->Reshape(Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->num(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->channels(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->height(),Layer<Dtype>::second_layer_weighted_sample_real[blob_id]->width());
+            get_freq_second<<<CAFFE_GET_BLOCKS(top[0]->count()), CAFFE_CUDA_NUM_THREADS>>>(top[0]->count(), this->d_freq_response2, top[0]->mutable_gpu_data());
+            ifft2_second(this->inverse_plan_response[blob_id],this->d_freq_response2,this->d_in_response2);
+            scale_factor=row_num*col_num;
+            scale_out_real_second<<<CAFFE_GET_BLOCKS(this->blobs_[blob_id]->count()), CAFFE_CUDA_NUM_THREADS>>>(this->blobs_[blob_id]->count(),this->d_in_response2,scale_factor); 
+            caffe_copy(this->blobs_[blob_id]->count(),(Dtype*)this->d_in_response2,this->blobs_[blob_id]->mutable_gpu_data());
+          
+        }
+        else
+        {
+
+        }
+    }
+
+
+
+
+
+
+}
+
+template <typename Dtype>
+void WtfsecondLayer<Dtype>::Backward_gpu(const vector<Blob<Dtype>*>& top,
+      const vector<bool>& propagate_down, const vector<Blob<Dtype>*>& bottom) {
+
+}
+
+INSTANTIATE_LAYER_GPU_FUNCS(WtfsecondLayer);
+
+}  // namespace caffe

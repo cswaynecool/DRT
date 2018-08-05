@@ -1,0 +1,107 @@
+name: "pnet"
+force_backward: true
+input: "data1"
+input_dim: 1
+input_dim: 512
+input_dim: 46 
+input_dim: 46
+
+
+
+layer {
+  bottom: "data1"
+  top: "my_f1"
+  name: "my_f1"
+  type: "Wtfthird"
+  param {
+    #lr_mult: 0.0000001
+    lr_mult: 0.001
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    mylayerthird: true
+    num_output: 100
+    mask: true
+    group: 1
+    pad: 1
+    kernel_size: 3
+    weight_filler {
+      type: "gaussian"
+      std: 1e-7
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+ }
+}
+layer {
+  bottom: "my_f1"
+  top: "my_f2"
+  name: "my_f2"
+  type: "Convolution"
+  param {
+    #lr_mult: 0.01
+    lr_mult: 1
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    num_output: 1
+    group: 1
+    pad: 1
+    kernel_size: 3
+    weight_filler {
+      type: "gaussian"
+      std: 1e-7
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+
+layer{ 
+  bottom: "my_f2"
+  top: "my_f2"
+  name: "relu5_f1"
+  type: "ReLU"
+}
+
+#layer {
+#  bottom: "my_f2"
+#  top: "my_f3"
+#  name: "my_f3"
+#  type: "Convolution"
+#  param {
+#    lr_mult: 0.1
+#    decay_mult: 5
+#  }
+#  param {
+#    lr_mult: 0
+#    decay_mult: 0
+#  }
+#  convolution_param {
+#    num_output: 1
+#    group: 1
+#    pad: 1
+#    kernel_size: 3
+#    weight_filler {
+#      type: "gaussian"
+#      std: 1e-7
+#    }
+#    bias_filler {
+#      type: "constant"
+#      value: 0
+#    }
+#  }
+#}
+

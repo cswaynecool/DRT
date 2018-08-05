@@ -1,0 +1,42 @@
+name: "lnet"
+force_backward: true
+input: "data"
+input_dim: 1
+input_dim: 9
+input_dim: 46 
+input_dim: 46 
+
+
+
+
+layer {
+  bottom: "data"
+  top: "conv5_f2"
+  name: "conv5_f2"
+  type: "Wtfseventh"
+ #type: "Convolution"
+  param {
+    lr_mult: 2
+    decay_mult: 5
+  }
+  param {
+    lr_mult: 2
+    decay_mult: 0
+  }
+  convolution_param {
+    mylayerseventh: true
+    num_output: 100
+    group: 1
+    pad: 5
+    kernel_size: 11
+    weight_filler {
+      type: "gaussian"
+      std: 1e-7
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+

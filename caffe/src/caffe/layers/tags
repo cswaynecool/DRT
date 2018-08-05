@@ -1,0 +1,305 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AddDatumVector	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::AddDatumVector(const vector<Datum>& datum_vector) {$/;"	f	class:caffe::MemoryDataLayer
+AddMatVector	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::AddMatVector(const vector<cv::Mat>& mat_vector,$/;"	f	class:caffe::MemoryDataLayer
+Backward_cpu	absval_layer.cpp	/^void AbsValLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::AbsValLayer
+Backward_cpu	bnll_layer.cpp	/^void BNLLLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::BNLLLayer
+Backward_cpu	concat_layer.cpp	/^void ConcatLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ConcatLayer
+Backward_cpu	contrastive_loss_layer.cpp	/^void ContrastiveLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ContrastiveLossLayer
+Backward_cpu	conv_layer.cpp	/^void ConvolutionLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ConvolutionLayer
+Backward_cpu	deconv_layer.cpp	/^void DeconvolutionLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::DeconvolutionLayer
+Backward_cpu	dropout_layer.cpp	/^void DropoutLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::DropoutLayer
+Backward_cpu	eltwise_layer.cpp	/^void EltwiseLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::EltwiseLayer
+Backward_cpu	embed_layer.cpp	/^void EmbedLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::EmbedLayer
+Backward_cpu	euclidean_loss_layer.cpp	/^void EuclideanLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::EuclideanLossLayer
+Backward_cpu	exp_layer.cpp	/^void ExpLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ExpLayer
+Backward_cpu	filter_layer.cpp	/^void FilterLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::FilterLayer
+Backward_cpu	flatten_layer.cpp	/^void FlattenLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::FlattenLayer
+Backward_cpu	gmm_loss_layer.cpp	/^void GMMLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::GMMLossLayer
+Backward_cpu	hdf5_output_layer.cpp	/^void HDF5OutputLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::HDF5OutputLayer
+Backward_cpu	hinge_loss_layer.cpp	/^void HingeLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::HingeLossLayer
+Backward_cpu	im2col_layer.cpp	/^void Im2colLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::Im2colLayer
+Backward_cpu	infogain_loss_layer.cpp	/^void InfogainLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::InfogainLossLayer
+Backward_cpu	inner_product_layer.cpp	/^void InnerProductLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::InnerProductLayer
+Backward_cpu	log_layer.cpp	/^void LogLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::LogLayer
+Backward_cpu	lrn_layer.cpp	/^void LRNLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::LRNLayer
+Backward_cpu	lstm_unit_layer.cpp	/^void LSTMUnitLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::LSTMUnitLayer
+Backward_cpu	multinomial_logistic_loss_layer.cpp	/^void MultinomialLogisticLossLayer<Dtype>::Backward_cpu($/;"	f	class:caffe::MultinomialLogisticLossLayer
+Backward_cpu	mvn_layer.cpp	/^void MVNLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::MVNLayer
+Backward_cpu	pooling_layer.cpp	/^void PoolingLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::PoolingLayer
+Backward_cpu	power_layer.cpp	/^void PowerLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::PowerLayer
+Backward_cpu	prelu_layer.cpp	/^void PReLULayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::PReLULayer
+Backward_cpu	recurrent_layer.cpp	/^void RecurrentLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::RecurrentLayer
+Backward_cpu	reduction_layer.cpp	/^void ReductionLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ReductionLayer
+Backward_cpu	relu_layer.cpp	/^void ReLULayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ReLULayer
+Backward_cpu	scalar_layer.cpp	/^void ScalarLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::ScalarLayer
+Backward_cpu	sigmoid_cross_entropy_loss_layer.cpp	/^void SigmoidCrossEntropyLossLayer<Dtype>::Backward_cpu($/;"	f	class:caffe::SigmoidCrossEntropyLossLayer
+Backward_cpu	sigmoid_layer.cpp	/^void SigmoidLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SigmoidLayer
+Backward_cpu	silence_layer.cpp	/^void SilenceLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SilenceLayer
+Backward_cpu	slice_layer.cpp	/^void SliceLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SliceLayer
+Backward_cpu	softmax_layer.cpp	/^void SoftmaxLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SoftmaxLayer
+Backward_cpu	softmax_loss_layer.cpp	/^void SoftmaxWithLossLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SoftmaxWithLossLayer
+Backward_cpu	split_layer.cpp	/^void SplitLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SplitLayer
+Backward_cpu	spp_layer.cpp	/^void SPPLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::SPPLayer
+Backward_cpu	tanh_layer.cpp	/^void TanHLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::TanHLayer
+Backward_cpu	tile_layer.cpp	/^void TileLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,$/;"	f	class:caffe::TileLayer
+BaseDataLayer	base_data_layer.cpp	/^BaseDataLayer<Dtype>::BaseDataLayer(const LayerParameter& param)$/;"	f	class:caffe::BaseDataLayer
+BasePrefetchingDataLayer	base_data_layer.cpp	/^BasePrefetchingDataLayer<Dtype>::BasePrefetchingDataLayer($/;"	f	class:caffe::BasePrefetchingDataLayer
+CUDNN_STREAMS_PER_GROUP	cudnn_conv_layer.cpp	15;"	d	file:
+CrossChannelBackward_cpu	lrn_layer.cpp	/^void LRNLayer<Dtype>::CrossChannelBackward_cpu($/;"	f	class:caffe::LRNLayer
+CrossChannelForward_cpu	lrn_layer.cpp	/^void LRNLayer<Dtype>::CrossChannelForward_cpu($/;"	f	class:caffe::LRNLayer
+DataLayer	data_layer.cpp	/^DataLayer<Dtype>::DataLayer(const LayerParameter& param)$/;"	f	class:caffe::DataLayer
+DataLayerSetUp	data_layer.cpp	/^void DataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DataLayer
+DataLayerSetUp	image_data_layer.cpp	/^void ImageDataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ImageDataLayer
+DataLayerSetUp	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::MemoryDataLayer
+DataLayerSetUp	window_data_layer.cpp	/^void WindowDataLayer<Dtype>::DataLayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::WindowDataLayer
+FillUnrolledNet	lstm_layer.cpp	/^void LSTMLayer<Dtype>::FillUnrolledNet(NetParameter* net_param) const {$/;"	f	class:caffe::LSTMLayer
+FillUnrolledNet	rnn_layer.cpp	/^void RNNLayer<Dtype>::FillUnrolledNet(NetParameter* net_param) const {$/;"	f	class:caffe::RNNLayer
+Forward_cpu	absval_layer.cpp	/^void AbsValLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::AbsValLayer
+Forward_cpu	accuracy_layer.cpp	/^void AccuracyLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::AccuracyLayer
+Forward_cpu	argmax_layer.cpp	/^void ArgMaxLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ArgMaxLayer
+Forward_cpu	base_data_layer.cpp	/^void BasePrefetchingDataLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::BasePrefetchingDataLayer
+Forward_cpu	bnll_layer.cpp	/^void BNLLLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::BNLLLayer
+Forward_cpu	concat_layer.cpp	/^void ConcatLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ConcatLayer
+Forward_cpu	contrastive_loss_layer.cpp	/^void ContrastiveLossLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::ContrastiveLossLayer
+Forward_cpu	conv_layer.cpp	/^void ConvolutionLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ConvolutionLayer
+Forward_cpu	deconv_layer.cpp	/^void DeconvolutionLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DeconvolutionLayer
+Forward_cpu	dropout_layer.cpp	/^void DropoutLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DropoutLayer
+Forward_cpu	dummy_data_layer.cpp	/^void DummyDataLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DummyDataLayer
+Forward_cpu	eltwise_layer.cpp	/^void EltwiseLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::EltwiseLayer
+Forward_cpu	embed_layer.cpp	/^void EmbedLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EmbedLayer
+Forward_cpu	euclidean_loss_layer.cpp	/^void EuclideanLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EuclideanLossLayer
+Forward_cpu	exp_layer.cpp	/^void ExpLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ExpLayer
+Forward_cpu	filter_layer.cpp	/^void FilterLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::FilterLayer
+Forward_cpu	flatten_layer.cpp	/^void FlattenLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::FlattenLayer
+Forward_cpu	gmm_loss_layer.cpp	/^void GMMLossLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::GMMLossLayer
+Forward_cpu	hdf5_data_layer.cpp	/^void HDF5DataLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::HDF5DataLayer
+Forward_cpu	hdf5_output_layer.cpp	/^void HDF5OutputLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::HDF5OutputLayer
+Forward_cpu	hinge_loss_layer.cpp	/^void HingeLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::HingeLossLayer
+Forward_cpu	im2col_layer.cpp	/^void Im2colLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::Im2colLayer
+Forward_cpu	infogain_loss_layer.cpp	/^void InfogainLossLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::InfogainLossLayer
+Forward_cpu	inner_product_layer.cpp	/^void InnerProductLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::InnerProductLayer
+Forward_cpu	log_layer.cpp	/^void LogLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LogLayer
+Forward_cpu	lrn_layer.cpp	/^void LRNLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LRNLayer
+Forward_cpu	lstm_unit_layer.cpp	/^void LSTMUnitLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LSTMUnitLayer
+Forward_cpu	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::MemoryDataLayer
+Forward_cpu	multinomial_logistic_loss_layer.cpp	/^void MultinomialLogisticLossLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::MultinomialLogisticLossLayer
+Forward_cpu	mvn_layer.cpp	/^void MVNLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::MVNLayer
+Forward_cpu	pooling_layer.cpp	/^void PoolingLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PoolingLayer
+Forward_cpu	power_layer.cpp	/^void PowerLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PowerLayer
+Forward_cpu	prelu_layer.cpp	/^void PReLULayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PReLULayer
+Forward_cpu	recurrent_layer.cpp	/^void RecurrentLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::RecurrentLayer
+Forward_cpu	reduction_layer.cpp	/^void ReductionLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::ReductionLayer
+Forward_cpu	relu_layer.cpp	/^void ReLULayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ReLULayer
+Forward_cpu	scalar_layer.cpp	/^void ScalarLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::ScalarLayer
+Forward_cpu	sigmoid_cross_entropy_loss_layer.cpp	/^void SigmoidCrossEntropyLossLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::SigmoidCrossEntropyLossLayer
+Forward_cpu	sigmoid_layer.cpp	/^void SigmoidLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SigmoidLayer
+Forward_cpu	slice_layer.cpp	/^void SliceLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SliceLayer
+Forward_cpu	softmax_layer.cpp	/^void SoftmaxLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SoftmaxLayer
+Forward_cpu	softmax_loss_layer.cpp	/^void SoftmaxWithLossLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::SoftmaxWithLossLayer
+Forward_cpu	split_layer.cpp	/^void SplitLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SplitLayer
+Forward_cpu	spp_layer.cpp	/^void SPPLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SPPLayer
+Forward_cpu	tanh_layer.cpp	/^void TanHLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::TanHLayer
+Forward_cpu	threshold_layer.cpp	/^void ThresholdLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ThresholdLayer
+Forward_cpu	tile_layer.cpp	/^void TileLayer<Dtype>::Forward_cpu($/;"	f	class:caffe::TileLayer
+GetPoolingParam	spp_layer.cpp	/^LayerParameter SPPLayer<Dtype>::GetPoolingParam(const int pyramid_level,$/;"	f	class:caffe::SPPLayer
+InternalThreadEntry	base_data_layer.cpp	/^void BasePrefetchingDataLayer<Dtype>::InternalThreadEntry() {$/;"	f	class:caffe::BasePrefetchingDataLayer
+LayerSetUp	absval_layer.cpp	/^void AbsValLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::AbsValLayer
+LayerSetUp	accuracy_layer.cpp	/^void AccuracyLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::AccuracyLayer
+LayerSetUp	argmax_layer.cpp	/^void ArgMaxLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ArgMaxLayer
+LayerSetUp	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::BaseConvolutionLayer
+LayerSetUp	base_data_layer.cpp	/^void BaseDataLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::BaseDataLayer
+LayerSetUp	base_data_layer.cpp	/^void BasePrefetchingDataLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::BasePrefetchingDataLayer
+LayerSetUp	concat_layer.cpp	/^void ConcatLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ConcatLayer
+LayerSetUp	contrastive_loss_layer.cpp	/^void ContrastiveLossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::ContrastiveLossLayer
+LayerSetUp	cudnn_conv_layer.cpp	/^void CuDNNConvolutionLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::CuDNNConvolutionLayer
+LayerSetUp	cudnn_pooling_layer.cpp	/^void CuDNNPoolingLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNPoolingLayer
+LayerSetUp	cudnn_relu_layer.cpp	/^void CuDNNReLULayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNReLULayer
+LayerSetUp	cudnn_sigmoid_layer.cpp	/^void CuDNNSigmoidLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNSigmoidLayer
+LayerSetUp	cudnn_softmax_layer.cpp	/^void CuDNNSoftmaxLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNSoftmaxLayer
+LayerSetUp	cudnn_tanh_layer.cpp	/^void CuDNNTanHLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNTanHLayer
+LayerSetUp	dropout_layer.cpp	/^void DropoutLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DropoutLayer
+LayerSetUp	dummy_data_layer.cpp	/^void DummyDataLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DummyDataLayer
+LayerSetUp	eltwise_layer.cpp	/^void EltwiseLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EltwiseLayer
+LayerSetUp	embed_layer.cpp	/^void EmbedLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EmbedLayer
+LayerSetUp	exp_layer.cpp	/^void ExpLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ExpLayer
+LayerSetUp	filter_layer.cpp	/^void FilterLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::FilterLayer
+LayerSetUp	gmm_loss_layer.cpp	/^void GMMLossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::GMMLossLayer
+LayerSetUp	hdf5_data_layer.cpp	/^void HDF5DataLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::HDF5DataLayer
+LayerSetUp	hdf5_output_layer.cpp	/^void HDF5OutputLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::HDF5OutputLayer
+LayerSetUp	im2col_layer.cpp	/^void Im2colLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::Im2colLayer
+LayerSetUp	infogain_loss_layer.cpp	/^void InfogainLossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::InfogainLossLayer
+LayerSetUp	inner_product_layer.cpp	/^void InnerProductLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::InnerProductLayer
+LayerSetUp	log_layer.cpp	/^void LogLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LogLayer
+LayerSetUp	loss_layer.cpp	/^void LossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::LossLayer
+LayerSetUp	lrn_layer.cpp	/^void LRNLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LRNLayer
+LayerSetUp	pooling_layer.cpp	/^void PoolingLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PoolingLayer
+LayerSetUp	power_layer.cpp	/^void PowerLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PowerLayer
+LayerSetUp	prelu_layer.cpp	/^void PReLULayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PReLULayer
+LayerSetUp	recurrent_layer.cpp	/^void RecurrentLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::RecurrentLayer
+LayerSetUp	reduction_layer.cpp	/^void ReductionLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ReductionLayer
+LayerSetUp	reshape_layer.cpp	/^void ReshapeLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ReshapeLayer
+LayerSetUp	sigmoid_cross_entropy_loss_layer.cpp	/^void SigmoidCrossEntropyLossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::SigmoidCrossEntropyLossLayer
+LayerSetUp	slice_layer.cpp	/^void SliceLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SliceLayer
+LayerSetUp	softmax_loss_layer.cpp	/^void SoftmaxWithLossLayer<Dtype>::LayerSetUp($/;"	f	class:caffe::SoftmaxWithLossLayer
+LayerSetUp	spp_layer.cpp	/^void SPPLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SPPLayer
+LayerSetUp	threshold_layer.cpp	/^void ThresholdLayer<Dtype>::LayerSetUp(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ThresholdLayer
+LoadHDF5FileData	hdf5_data_layer.cpp	/^void HDF5DataLayer<Dtype>::LoadHDF5FileData(const char* filename) {$/;"	f	class:caffe::HDF5DataLayer
+OutputBlobNames	lstm_layer.cpp	/^void LSTMLayer<Dtype>::OutputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::LSTMLayer
+OutputBlobNames	rnn_layer.cpp	/^void RNNLayer<Dtype>::OutputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::RNNLayer
+PrefetchRand	window_data_layer.cpp	/^unsigned int WindowDataLayer<Dtype>::PrefetchRand() {$/;"	f	class:caffe::WindowDataLayer
+RecurrentInputBlobNames	lstm_layer.cpp	/^void LSTMLayer<Dtype>::RecurrentInputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::LSTMLayer
+RecurrentInputBlobNames	rnn_layer.cpp	/^void RNNLayer<Dtype>::RecurrentInputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::RNNLayer
+RecurrentInputShapes	lstm_layer.cpp	/^void LSTMLayer<Dtype>::RecurrentInputShapes(vector<BlobShape>* shapes) const {$/;"	f	class:caffe::LSTMLayer
+RecurrentInputShapes	rnn_layer.cpp	/^void RNNLayer<Dtype>::RecurrentInputShapes(vector<BlobShape>* shapes) const {$/;"	f	class:caffe::RNNLayer
+RecurrentOutputBlobNames	lstm_layer.cpp	/^void LSTMLayer<Dtype>::RecurrentOutputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::LSTMLayer
+RecurrentOutputBlobNames	rnn_layer.cpp	/^void RNNLayer<Dtype>::RecurrentOutputBlobNames(vector<string>* names) const {$/;"	f	class:caffe::RNNLayer
+Reset	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::Reset(Dtype* data, Dtype* labels, int n) {$/;"	f	class:caffe::MemoryDataLayer
+Reset	recurrent_layer.cpp	/^void RecurrentLayer<Dtype>::Reset() {$/;"	f	class:caffe::RecurrentLayer
+Reshape	accuracy_layer.cpp	/^void AccuracyLayer<Dtype>::Reshape($/;"	f	class:caffe::AccuracyLayer
+Reshape	argmax_layer.cpp	/^void ArgMaxLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ArgMaxLayer
+Reshape	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::BaseConvolutionLayer
+Reshape	concat_layer.cpp	/^void ConcatLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ConcatLayer
+Reshape	cudnn_conv_layer.cpp	/^void CuDNNConvolutionLayer<Dtype>::Reshape($/;"	f	class:caffe::CuDNNConvolutionLayer
+Reshape	cudnn_pooling_layer.cpp	/^void CuDNNPoolingLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNPoolingLayer
+Reshape	cudnn_relu_layer.cpp	/^void CuDNNReLULayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNReLULayer
+Reshape	cudnn_sigmoid_layer.cpp	/^void CuDNNSigmoidLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNSigmoidLayer
+Reshape	cudnn_softmax_layer.cpp	/^void CuDNNSoftmaxLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNSoftmaxLayer
+Reshape	cudnn_tanh_layer.cpp	/^void CuDNNTanHLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::CuDNNTanHLayer
+Reshape	dropout_layer.cpp	/^void DropoutLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::DropoutLayer
+Reshape	eltwise_layer.cpp	/^void EltwiseLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EltwiseLayer
+Reshape	embed_layer.cpp	/^void EmbedLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::EmbedLayer
+Reshape	euclidean_loss_layer.cpp	/^void EuclideanLossLayer<Dtype>::Reshape($/;"	f	class:caffe::EuclideanLossLayer
+Reshape	filter_layer.cpp	/^void FilterLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::FilterLayer
+Reshape	flatten_layer.cpp	/^void FlattenLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::FlattenLayer
+Reshape	gmm_loss_layer.cpp	/^void GMMLossLayer<Dtype>::Reshape($/;"	f	class:caffe::GMMLossLayer
+Reshape	im2col_layer.cpp	/^void Im2colLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::Im2colLayer
+Reshape	infogain_loss_layer.cpp	/^void InfogainLossLayer<Dtype>::Reshape($/;"	f	class:caffe::InfogainLossLayer
+Reshape	inner_product_layer.cpp	/^void InnerProductLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::InnerProductLayer
+Reshape	loss_layer.cpp	/^void LossLayer<Dtype>::Reshape($/;"	f	class:caffe::LossLayer
+Reshape	lrn_layer.cpp	/^void LRNLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LRNLayer
+Reshape	lstm_unit_layer.cpp	/^void LSTMUnitLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::LSTMUnitLayer
+Reshape	multinomial_logistic_loss_layer.cpp	/^void MultinomialLogisticLossLayer<Dtype>::Reshape($/;"	f	class:caffe::MultinomialLogisticLossLayer
+Reshape	mvn_layer.cpp	/^void MVNLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::MVNLayer
+Reshape	neuron_layer.cpp	/^void NeuronLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::NeuronLayer
+Reshape	pooling_layer.cpp	/^void PoolingLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PoolingLayer
+Reshape	prelu_layer.cpp	/^void PReLULayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::PReLULayer
+Reshape	recurrent_layer.cpp	/^void RecurrentLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::RecurrentLayer
+Reshape	reduction_layer.cpp	/^void ReductionLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ReductionLayer
+Reshape	reshape_layer.cpp	/^void ReshapeLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ReshapeLayer
+Reshape	scalar_layer.cpp	/^void ScalarLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::ScalarLayer
+Reshape	sigmoid_cross_entropy_loss_layer.cpp	/^void SigmoidCrossEntropyLossLayer<Dtype>::Reshape($/;"	f	class:caffe::SigmoidCrossEntropyLossLayer
+Reshape	slice_layer.cpp	/^void SliceLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SliceLayer
+Reshape	softmax_layer.cpp	/^void SoftmaxLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SoftmaxLayer
+Reshape	softmax_loss_layer.cpp	/^void SoftmaxWithLossLayer<Dtype>::Reshape($/;"	f	class:caffe::SoftmaxWithLossLayer
+Reshape	split_layer.cpp	/^void SplitLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SplitLayer
+Reshape	spp_layer.cpp	/^void SPPLayer<Dtype>::Reshape(const vector<Blob<Dtype>*>& bottom,$/;"	f	class:caffe::SPPLayer
+Reshape	tile_layer.cpp	/^void TileLayer<Dtype>::Reshape($/;"	f	class:caffe::TileLayer
+SaveBlobs	hdf5_output_layer.cpp	/^void HDF5OutputLayer<Dtype>::SaveBlobs() {$/;"	f	class:caffe::HDF5OutputLayer
+ShuffleImages	image_data_layer.cpp	/^void ImageDataLayer<Dtype>::ShuffleImages() {$/;"	f	class:caffe::ImageDataLayer
+WithinChannelBackward	lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelBackward($/;"	f	class:caffe::LRNLayer
+WithinChannelForward	lrn_layer.cpp	/^void LRNLayer<Dtype>::WithinChannelForward($/;"	f	class:caffe::LRNLayer
+backward_cpu_bias	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::backward_cpu_bias(Dtype* bias,$/;"	f	class:caffe::BaseConvolutionLayer
+backward_cpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::backward_cpu_gemm(const Dtype* output,$/;"	f	class:caffe::BaseConvolutionLayer
+backward_cpu_mask	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::backward_cpu_mask(Dtype* output, const unsigned int* mask) {$/;"	f	class:caffe::BaseConvolutionLayer
+backward_gpu_bias	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::backward_gpu_bias(Dtype* bias,$/;"	f	class:caffe::BaseConvolutionLayer
+backward_gpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::backward_gpu_gemm(const Dtype* output,$/;"	f	class:caffe::BaseConvolutionLayer
+caffe	absval_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	accuracy_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	argmax_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	base_conv_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	base_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	bnll_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	concat_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	contrastive_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	conv_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_conv_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_pooling_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_relu_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_sigmoid_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_softmax_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	cudnn_tanh_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	deconv_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	dropout_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	dummy_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	eltwise_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	embed_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	euclidean_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	exp_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	filter_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	flatten_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	gmm_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	hdf5_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	hdf5_output_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	hinge_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	im2col_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	image_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	infogain_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	inner_product_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	log_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	lrn_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	lstm_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	lstm_unit_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	memory_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	multinomial_logistic_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	mvn_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	neuron_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	pooling_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	power_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	prelu_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	recurrent_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	reduction_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	relu_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	reshape_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	rnn_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	scalar_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	sigmoid_cross_entropy_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	sigmoid_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	silence_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	slice_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	softmax_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	softmax_loss_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	split_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	spp_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	tanh_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	threshold_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	tile_layer.cpp	/^namespace caffe {$/;"	n	file:
+caffe	window_data_layer.cpp	/^namespace caffe {$/;"	n	file:
+compute_output_shape	conv_layer.cpp	/^void ConvolutionLayer<Dtype>::compute_output_shape() {$/;"	f	class:caffe::ConvolutionLayer
+compute_output_shape	deconv_layer.cpp	/^void DeconvolutionLayer<Dtype>::compute_output_shape() {$/;"	f	class:caffe::DeconvolutionLayer
+fcn_weight_gpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::fcn_weight_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
+fill_mask	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::fill_mask() {$/;"	f	class:caffe::BaseConvolutionLayer
+fill_mask_cpu	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::fill_mask_cpu() {$/;"	f	class:caffe::BaseConvolutionLayer
+forward_cpu_bias	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::forward_cpu_bias(Dtype* output,$/;"	f	class:caffe::BaseConvolutionLayer
+forward_cpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::forward_cpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
+forward_cpu_mask	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::forward_cpu_mask(Dtype* output, const unsigned int* mask) {$/;"	f	class:caffe::BaseConvolutionLayer
+forward_gpu_bias	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::forward_gpu_bias(Dtype* output,$/;"	f	class:caffe::BaseConvolutionLayer
+forward_gpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::forward_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
+int_to_str	recurrent_layer.cpp	/^string RecurrentLayer<Dtype>::int_to_str(const int t) const {$/;"	f	class:caffe::RecurrentLayer
+kBNLL_THRESHOLD	bnll_layer.cpp	/^const float kBNLL_THRESHOLD = 50.;$/;"	m	namespace:caffe	file:
+load_batch	data_layer.cpp	/^void DataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {$/;"	f	class:caffe::DataLayer
+load_batch	image_data_layer.cpp	/^void ImageDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {$/;"	f	class:caffe::ImageDataLayer
+load_batch	window_data_layer.cpp	/^void WindowDataLayer<Dtype>::load_batch(Batch<Dtype>* batch) {$/;"	f	class:caffe::WindowDataLayer
+set_batch_size	memory_data_layer.cpp	/^void MemoryDataLayer<Dtype>::set_batch_size(int new_size) {$/;"	f	class:caffe::MemoryDataLayer
+sigmoid	lstm_unit_layer.cpp	/^inline Dtype sigmoid(Dtype x) {$/;"	f	namespace:caffe
+sigmoid	sigmoid_layer.cpp	/^inline Dtype sigmoid(Dtype x) {$/;"	f	namespace:caffe
+tanh	lstm_unit_layer.cpp	/^inline Dtype tanh(Dtype x) {$/;"	f	namespace:caffe
+weight_cpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_cpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
+weight_gpu_gemm	base_conv_layer.cpp	/^void BaseConvolutionLayer<Dtype>::weight_gpu_gemm(const Dtype* input,$/;"	f	class:caffe::BaseConvolutionLayer
+~CuDNNConvolutionLayer	cudnn_conv_layer.cpp	/^CuDNNConvolutionLayer<Dtype>::~CuDNNConvolutionLayer() {$/;"	f	class:caffe::CuDNNConvolutionLayer
+~CuDNNPoolingLayer	cudnn_pooling_layer.cpp	/^CuDNNPoolingLayer<Dtype>::~CuDNNPoolingLayer() {$/;"	f	class:caffe::CuDNNPoolingLayer
+~CuDNNReLULayer	cudnn_relu_layer.cpp	/^CuDNNReLULayer<Dtype>::~CuDNNReLULayer() {$/;"	f	class:caffe::CuDNNReLULayer
+~CuDNNSigmoidLayer	cudnn_sigmoid_layer.cpp	/^CuDNNSigmoidLayer<Dtype>::~CuDNNSigmoidLayer() {$/;"	f	class:caffe::CuDNNSigmoidLayer
+~CuDNNSoftmaxLayer	cudnn_softmax_layer.cpp	/^CuDNNSoftmaxLayer<Dtype>::~CuDNNSoftmaxLayer() {$/;"	f	class:caffe::CuDNNSoftmaxLayer
+~CuDNNTanHLayer	cudnn_tanh_layer.cpp	/^CuDNNTanHLayer<Dtype>::~CuDNNTanHLayer() {$/;"	f	class:caffe::CuDNNTanHLayer
+~DataLayer	data_layer.cpp	/^DataLayer<Dtype>::~DataLayer() {$/;"	f	class:caffe::DataLayer
+~HDF5DataLayer	hdf5_data_layer.cpp	/^HDF5DataLayer<Dtype>::~HDF5DataLayer<Dtype>() { }$/;"	f	class:caffe::HDF5DataLayer
+~HDF5OutputLayer	hdf5_output_layer.cpp	/^HDF5OutputLayer<Dtype>::~HDF5OutputLayer<Dtype>() {$/;"	f	class:caffe::HDF5OutputLayer
+~ImageDataLayer	image_data_layer.cpp	/^ImageDataLayer<Dtype>::~ImageDataLayer<Dtype>() {$/;"	f	class:caffe::ImageDataLayer
+~WindowDataLayer	window_data_layer.cpp	/^WindowDataLayer<Dtype>::~WindowDataLayer<Dtype>() {$/;"	f	class:caffe::WindowDataLayer
